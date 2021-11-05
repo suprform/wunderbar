@@ -1,10 +1,19 @@
 import React from 'react'
 
-import { ExampleComponent } from 'wunderbar'
+import { Button, Icons } from 'wunderbar'
 import 'wunderbar/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <Button
+      PostIcon={Icons.ArrowRight}
+      rounded
+      style={{ margin: '40px' }}
+      size='big'
+    >
+      Create React Library Example{` `}
+    </Button>
+  )
 }
 
 export default App
