@@ -4,7 +4,7 @@
 import { css, jsx } from '@emotion/react'
 // eslint-disable-next-line no-unused-vars
 import Choice, { ChoiceProps } from '../../atoms/Choice'
-import { grey } from '../../styles/colors'
+import { grey, red } from '../../styles/colors'
 import { subHeading } from '../../styles/font'
 
 type ChoiceListPropTypes = {
@@ -97,7 +97,15 @@ const ChoiceList = ({
           </li>
         ))}
       </ul>
-      {error && <span>{error}</span>}
+      {error && (
+        <span
+          css={css`
+            color: ${red[600]} !important;
+          `}
+        >
+          {error}
+        </span>
+      )}
     </fieldset>
   )
 }

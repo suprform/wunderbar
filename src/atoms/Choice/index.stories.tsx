@@ -14,7 +14,10 @@ const ExChoice = ({ ...args }: any) => {
         value='checkBox101'
         {...args}
         checked={checked}
-        onChange={(v: boolean) => setValueChecked(v)}
+        onChange={(v, l, n) => {
+          setValueChecked(v)
+          args.onChange(v, l, n)
+        }}
       />
       <Choice
         value='checkBox102'
@@ -22,7 +25,7 @@ const ExChoice = ({ ...args }: any) => {
         checked
         disabled
         label='Disabled checkbox'
-        onChange={(v: boolean) => setValueChecked(v)}
+        onChange={(v) => setValueChecked(v)}
       />
     </>
   )
@@ -134,6 +137,24 @@ export default {
       control: {
         type: 'boolean'
       }
+    },
+    style: {
+      name: 'style',
+      defaultValue: {},
+      default: {},
+      control: { type: 'object' }
+    },
+    onChange: {
+      name: 'onChange',
+      action: 'clicked'
+    },
+    onFocus: {
+      name: 'onFocus',
+      action: 'focused'
+    },
+    onBlur: {
+      name: 'onBlur',
+      action: 'blurred'
     }
   }
 } as any

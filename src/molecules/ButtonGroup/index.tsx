@@ -5,7 +5,7 @@ import Button, { ButtonProps } from '../../atoms/Button'
 import { css, jsx } from '@emotion/react'
 import baseColor from '../../styles/colors'
 
-export const ButtonGroup = ({ children }: { children: ButtonProps[] }) => {
+const ButtonGroup = ({ children }: { children: ButtonProps[] }) => {
   const style = css`
     display: inline-flex;
     border-radius: 8px;
@@ -35,6 +35,8 @@ export const ButtonGroup = ({ children }: { children: ButtonProps[] }) => {
   `
   return children.length > 0 ? <div css={style}>{children}</div> : null
 }
+
+export default ButtonGroup
 
 ButtonGroup.defaultProps = {
   children: [

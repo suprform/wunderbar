@@ -6,22 +6,31 @@ const ExChoiceList = ({ ...args }: any) => {
   const handleChange = React.useCallback((value) => setSelected(value), [])
 
   return (
-    <ChoiceList
-      title='Your favorite dish'
-      choices={[
-        { label: 'Wurst', value: 'Wurst', helpText: 'Authentic german' },
-        { label: 'Rouladen', value: 'Rouladen', helpText: 'Authentic german' },
-        { label: 'Brezel', value: 'Brezel', helpText: 'Authentic german' },
-        {
-          label: 'Pork Chops',
-          value: 'Pork Chops',
-          helpText: 'Authentic german'
-        }
-      ]}
-      {...args}
-      selected={selected}
-      onChange={handleChange}
-    />
+    <>
+      <ChoiceList
+        title='Your favorite dish'
+        choices={[
+          { label: 'Wurst', value: 'Wurst', helpText: 'Authentic german' },
+          {
+            label: 'Rouladen',
+            value: 'Rouladen',
+            helpText: 'Authentic german'
+          },
+          { label: 'Brezel', value: 'Brezel', helpText: 'Authentic german' },
+          {
+            label: 'Pork Chops',
+            value: 'Pork Chops',
+            helpText: 'Authentic german'
+          }
+        ]}
+        {...args}
+        selected={selected}
+        onChange={(v) => {
+          handleChange(v)
+          args.onChange(v)
+        }}
+      />
+    </>
   )
 }
 
@@ -121,6 +130,10 @@ export default {
       control: {
         type: 'boolean'
       }
+    },
+    onChange: {
+      name: 'onChange',
+      action: 'clicked'
     }
   }
 } as any

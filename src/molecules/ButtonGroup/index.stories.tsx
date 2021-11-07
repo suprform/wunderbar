@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonGroup } from '.'
+import ButtonGroup from '.'
 import Button from '../../atoms/Button'
 
 export default {
