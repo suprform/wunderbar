@@ -9,31 +9,31 @@ import body, { bodyBig } from '../../styles/font'
 import Check from '../Icons/check'
 import Minus from '../Icons/minus'
 
-type CheckBoxProps = {
+export type ChoiceProps = {
   className?: string
-  id: string
+  id?: string
   label: string
-  value?: string
+  value: string
   checked?: Boolean
   name?: string
   helpText?: string
   error?: string
   disabled?: boolean
   labelHidden?: boolean
-  seperator?: boolean
   isIntermediate?: boolean
   style?: React.CSSProperties
   ref?: React.Ref<HTMLButtonElement> | undefined
-  onChange?(value: boolean, id: string): void
+  type: 'checkbox' | 'radio'
+  onChange?(checked: boolean, label: string, name?: string): void
   onFocus?(): void
   onBlur?(): void
 }
 
-interface CheckboxHandles {
+interface ChoiceHandles {
   focus(): void
 }
 
-export const Checkbox = React.forwardRef<CheckboxHandles, CheckBoxProps>(
+export const Choice = React.forwardRef<ChoiceHandles, ChoiceProps>(
   ({
     className,
     id,
@@ -50,11 +50,13 @@ export const Checkbox = React.forwardRef<CheckboxHandles, CheckBoxProps>(
     onChange,
     onBlur,
     onFocus,
-    seperator,
-    isIntermediate
-  }: CheckBoxProps) => {
+    isIntermediate,
+    type
+  }: ChoiceProps) => {
     const inputNode = React.useRef<HTMLInputElement>(null)
     const isChecked = !isIntermediate && Boolean(checked)
+    const isCheckbox = type === 'checkbox'
+    const isRadio = !isCheckbox
     const [keyFocused, setKeyFocused] = React.useState(false)
 
     const handleBlur = () => {
@@ -66,7 +68,7 @@ export const Checkbox = React.forwardRef<CheckboxHandles, CheckBoxProps>(
       if (onChange == null || inputNode.current == null || disabled) {
         return
       }
-      onChange(!inputNode.current.checked, id)
+      onChange(!inputNode.current.checked, label, name)
       inputNode.current.focus()
     }
 
@@ -89,8 +91,8 @@ export const Checkbox = React.forwardRef<CheckboxHandles, CheckBoxProps>(
     React.useImperativeHandle(ref, () => eves)
 
     const styles = css`
-      display: inline-flex;
-      padding: 12px 6px;
+      display: flex;
+      padding: 10px 6px;
       cursor: pointer;
 
       :hover {
@@ -119,15 +121,11 @@ export const Checkbox = React.forwardRef<CheckboxHandles, CheckBoxProps>(
       ${error &&
       css`
         background: ${red[100]};
+        border-radius: 8px;
       `};
 
-      ${seperator &&
-      css`
-        border-bottom: 1px solid ${grey[400]};
-      `}
-
       span {
-        input[type='checkbox'] {
+        input[type='${type}'] {
           position: absolute;
           top: 0;
           clip: rect(1px, 1px, 1px, 1px);
@@ -192,6 +190,54 @@ export const Checkbox = React.forwardRef<CheckboxHandles, CheckBoxProps>(
       }
     `
 
+    const radioStyles = css`
+      position: relative;
+      border-radius: 6px;
+      background: ${grey[100]};
+      border: 2px solid ${!disabled ? grey[400] : grey[300]};
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > span {
+        display: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: ${grey[100]};
+      }
+
+      ${isChecked &&
+      css`
+        background: ${grey[900]};
+        border: none;
+        > span {
+          display: inline;
+        }
+      `};
+
+      ${error &&
+      css`
+        background: ${red[200]};
+        border-color: ${red[600]};
+        > span {
+          background: ${red[600]};
+        }
+      `};
+
+      ${disabled &&
+      css`
+        background: ${grey[400]};
+        border: none;
+        > span {
+          background: ${grey[500]};
+        }
+      `}
+    `
+
     return (
       <label
         onClick={handleInput}
@@ -208,7 +254,7 @@ export const Checkbox = React.forwardRef<CheckboxHandles, CheckBoxProps>(
             id={id}
             name={name}
             value={value}
-            type='checkbox'
+            type={type}
             checked={isChecked}
             disabled={disabled}
             onFocus={onFocus}
@@ -217,10 +263,13 @@ export const Checkbox = React.forwardRef<CheckboxHandles, CheckBoxProps>(
             onChange={() => {}}
           />
         </span>
-        <span css={checkBoxStyles}>
-          {isChecked && <Check />}
-          {isIntermediate && <Minus />}
-        </span>
+        {isCheckbox && (
+          <span css={checkBoxStyles}>
+            {isChecked && <Check />}
+            {isIntermediate && <Minus />}
+          </span>
+        )}
+        {isRadio && <span css={radioStyles}>{isChecked && <span />}</span>}
         <span css={labelStyles}>
           <b>{label}</b>
           {error && <span style={{ color: red[600] }}>{error}</span>}
@@ -231,14 +280,15 @@ export const Checkbox = React.forwardRef<CheckboxHandles, CheckBoxProps>(
   }
 )
 
-export default Checkbox
+export default Choice
 
-Checkbox.defaultProps = {
+Choice.defaultProps = {
   onChange: () => {},
   onBlur: () => {},
   onFocus: () => {},
   labelHidden: false,
   id: new Date().toISOString(),
   checked: true,
-  value: 'true'
+  value: 'true',
+  type: 'checkbox'
 }

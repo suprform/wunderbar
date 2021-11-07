@@ -39,21 +39,18 @@ export default {
       name: 'disabled',
       defaultValue: false,
       default: false,
-      options: ['primary', 'white', 'success', 'error', 'warning', 'info'],
       control: { type: 'boolean' }
     },
     loading: {
       name: 'loading',
       defaultValue: false,
       default: false,
-      options: ['primary', 'white', 'success', 'error', 'warning', 'info'],
       control: { type: 'boolean' }
     },
     rounded: {
       name: 'rounded',
       defaultValue: false,
       default: false,
-      options: ['primary', 'white', 'success', 'error', 'warning', 'info'],
       control: { type: 'boolean' }
     },
     style: {

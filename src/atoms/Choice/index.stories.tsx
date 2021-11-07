@@ -1,7 +1,7 @@
 import React from 'react'
-import CheckBox from '.'
+import Choice from '.'
 
-const ExCheckBox = ({ ...args }: any) => {
+const ExChoice = ({ ...args }: any) => {
   const [checked, setValueChecked] = React.useState(false)
 
   React.useEffect(() => {
@@ -10,17 +10,15 @@ const ExCheckBox = ({ ...args }: any) => {
 
   return (
     <>
-      <CheckBox
-        id='checkBox101'
+      <Choice
+        value='checkBox101'
         {...args}
         checked={checked}
-        value={checked}
         onChange={(v: boolean) => setValueChecked(v)}
       />
-      <CheckBox
-        id='checkBox101'
+      <Choice
+        value='checkBox102'
         {...args}
-        value
         checked
         disabled
         label='Disabled checkbox'
@@ -31,8 +29,8 @@ const ExCheckBox = ({ ...args }: any) => {
 }
 
 export default {
-  component: ExCheckBox,
-  title: 'Atoms/Checkbox/Checkbox',
+  component: ExChoice,
+  title: 'Atoms/Choice',
   argTypes: {
     id: {
       name: 'id',
@@ -42,6 +40,14 @@ export default {
       control: {
         type: 'text'
       }
+    },
+    type: {
+      name: 'type',
+      type: { name: 'string', required: true },
+      defaultValue: 'checkbox',
+      default: 'checkbox',
+      options: ['checkbox', 'radio'],
+      control: { type: 'radio' }
     },
     className: {
       name: 'className',
@@ -63,7 +69,7 @@ export default {
     },
     value: {
       name: 'value',
-      type: { name: 'string', required: false },
+      type: { name: 'string', required: true },
       defaultValue: 'Wunderbar!',
       default: 'value',
       control: {
@@ -121,14 +127,6 @@ export default {
         type: 'boolean'
       }
     },
-    seperator: {
-      name: 'seperator',
-      defaultValue: false,
-      default: false,
-      control: {
-        type: 'boolean'
-      }
-    },
     isIntermediate: {
       name: 'isIntermediate',
       defaultValue: false,
@@ -140,11 +138,11 @@ export default {
   }
 } as any
 
-const Template: any = (args: any) => <ExCheckBox {...args} />
+const Template: any = (args: any) => <ExChoice {...args} />
 
-export const checkbox = Template.bind({})
+export const choice = Template.bind({})
 
-checkbox.args = {
+choice.args = {
   label: 'Wunderbar!',
   helpText: 'Blutwurst is the best',
   checked: true,
