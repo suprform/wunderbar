@@ -34,12 +34,28 @@ const ToggleItem = ({
   const styles = css`
     display: flex;
     padding: 20px;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &:hover {
+      background: ${grey[200]};
+      border-radius: 8px;
+    }
+
+    :active {
+      border-radius: 8px;
+      box-shadow: 0 0 0 2px ${grey[500]};
+    }
+
+    :focus {
+      border-radius: 8px;
+      box-shadow: 0 0 0 2px ${grey[500]};
+    }
 
     div {
       display: flex;
       flex-flow: column;
       margin-right: 8px;
-      cursor: pointer;
 
       b {
         display: inline-flex;
@@ -99,7 +115,14 @@ const ToggleItem = ({
   `
 
   return (
-    <label css={styles} className={className} id={id} style={style}>
+    <div
+      aria-role='switch'
+      css={styles}
+      className={className}
+      id={id}
+      style={style}
+      onClick={() => onChange && onChange(!checked, name)}
+    >
       <div>
         <b>
           {Icon && <Icon />}
@@ -121,10 +144,10 @@ const ToggleItem = ({
         disabled={disabled}
         name={name}
         ref={ref}
-        onChange={onChange}
-        onFocus={onFocus}
+        onChange={() => {}}
+        style={{ margin: '0px' }}
       />
-    </label>
+    </div>
   )
 }
 

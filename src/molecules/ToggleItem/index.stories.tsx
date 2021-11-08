@@ -19,6 +19,7 @@ const ExToggleItem = ({ ...args }: any) => {
           setValueChecked(v)
           args.onChange(v, name)
         }}
+        style={{ width: '600px' }}
       />
       <ToggleItemComp
         name='Toggle102'
@@ -26,6 +27,7 @@ const ExToggleItem = ({ ...args }: any) => {
         checked={false}
         disabled
         onChange={(v: boolean) => setValueChecked(v)}
+        style={{ width: '600px' }}
       />
     </>
   )
