@@ -4,7 +4,7 @@ import logo from '../logo.png'
 export default create({
   base: 'light',
   brandTitle: 'Wunderbar!',
-  brandUrl: 'https://github.com/thearvindnarayan/wunderbar',
+  brandUrl: 'https://suprform.github.io/wunderbar/',
   brandImage: logo,
   fontBase: '"Monteserrat", sans-serif',
   colorPrimary: 'orangered',

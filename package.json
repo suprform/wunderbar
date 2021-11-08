@@ -1,6 +1,6 @@
 {
-  "name": "wunderbar",
-  "version": "1.0.0",
+  "name": "@suprform/wunderbar",
+  "version": "0.0.1",
   "description": "A utility based atomic React JS UI Design System",
   "author": "TheArvindNarayan",
   "license": "Apache-2.0",
@@ -31,7 +31,8 @@
     "deploy": "gh-pages -d example/build",
     "story": "start-storybook -p 6006 -s ./.storybook/images",
     "build-storybook": "build-storybook",
-    "storybook-deploy": "storybook-to-ghpages"
+    "storybook-deploy": "storybook-to-ghpages",
+    "publish": "npm publish --access=public"
   },
   "peerDependencies": {
     "react": "^16.0.0"
