@@ -17,7 +17,15 @@ Wunderbar is a design system that help in **making simple, intuitive** and **bea
 Wunderbar is build based on [**atomic-design**](https://bradfrost.com/blog/post/atomic-web-design/) and [**component-driven**](https://componentdriven.org) approaches.
 Wunderbar's goal is to create atoms, molecules and to some degree organisms in UI, this would help you in creating templates/components and then pages.
 
-[![license](https://img.shields.io/badge/license-Apache-blue)](https://github.com/mui-org/material-ui/blob/master/LICENSE)
+
+![node](https://badgen.net/npm/node/@suprform/wunderbar)
+![npm](https://badgen.net/npm/v/@suprform/wunderbar)
+[![release](https://badgen.net/github/release/@suprform/wunderbar)](https://github.com/suprform/wunderbar/releases)
+[![license](https://img.shields.io/badge/license-Apache-blue)](https://raw.githubusercontent.com/suprform/wunderbar/master/LICENSE.md)
+[![size](https://badgen.net/bundlephobia/min/@suprform/wunderbar)](https://bundlephobia.com/package/@suprform/wunderbar@0.0.1)
+[![size](https://badgen.net/bundlephobia/min/@suprform/wunderbar)](https://bundlephobia.com/package/@suprform/wunderbar@0.0.1)
+[![dep](https://badgen.net/bundlephobia/dependency-count/@suprform/wunderbar)](https://bundlephobia.com/package/@suprform/wunderbar@0.0.1)
+[![treeshaking](https://badgen.net/bundlephobia/tree-shaking/@suprform/wunderbar)](https://bundlephobia.com/package/@suprform/wunderbar@0.0.1)
 
 ## Installation
 
