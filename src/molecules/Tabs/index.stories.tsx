@@ -7,7 +7,8 @@ const demoTabs = [
   { name: 'Tab2', value: 'tab2', selected: false, disabled: true },
   { name: 'Tab3', value: 'tab3', selected: false, error: true },
   { name: 'Tab4', value: 'tab4', selected: false, icon: SettingsIcon },
-  { name: 'Tab5', value: 'tab5', selected: false }
+  { name: 'Tab5', value: 'tab5', selected: false },
+  { name: 'Tab6', value: 'tab6', selected: false }
 ]
 
 const ExTabs = ({ ...args }: any) => {
@@ -50,6 +51,13 @@ export default {
       defaultValue: 'space',
       default: 'space',
       options: ['space', 'tabbed'],
+      control: { type: 'radio' }
+    },
+    orientation: {
+      name: 'orientation',
+      defaultValue: 'horizontal',
+      default: 'horizontal',
+      options: ['horizontal', 'vertical'],
       control: { type: 'radio' }
     },
     id: {

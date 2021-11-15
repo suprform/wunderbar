@@ -9,6 +9,7 @@ import { grey, red } from '../../styles/colors'
 type tabsProps = {
   tabs: TabProps[]
   type: 'space' | 'tabbed'
+  orientation?: 'horizontal' | 'vertical'
   style?: React.CSSProperties
   id?: string
   className?: string
@@ -24,12 +25,20 @@ type TabProps = {
   icon?: React.FunctionComponent<any>
 }
 
-const Tabs = ({ tabs, type, className, id, style, onChange }: tabsProps) => {
+const Tabs = ({
+  tabs,
+  type,
+  className,
+  orientation,
+  id,
+  style,
+  onChange
+}: tabsProps) => {
   const styles = css`
     display: flex;
     padding: 8px;
-    width: fit-content;
     border-radius: 16px;
+    overflow: auto;
 
     > button {
       background: ${grey[300]};
@@ -37,6 +46,7 @@ const Tabs = ({ tabs, type, className, id, style, onChange }: tabsProps) => {
       padding: 12px 32px;
       margin-right: 16px;
       border-radius: 11px;
+      flex: 1;
 
       :hover,
       :active {
@@ -47,6 +57,7 @@ const Tabs = ({ tabs, type, className, id, style, onChange }: tabsProps) => {
       &[disabled] {
         background: ${grey[200]};
         color: ${grey[500]};
+        box-shadow: none !important;
       }
 
       &[data-color='primary'] {
@@ -69,7 +80,7 @@ const Tabs = ({ tabs, type, className, id, style, onChange }: tabsProps) => {
       background: ${grey[300]};
 
       > button {
-        margin-right: 0px;
+        margin-right: 2px;
 
         &[disabled] {
           background: ${grey[300]};
@@ -88,6 +99,29 @@ const Tabs = ({ tabs, type, className, id, style, onChange }: tabsProps) => {
           color: ${grey[100]};
         }
       }
+    `}
+
+    ${orientation === 'vertical' &&
+    css`
+      flex-flow: column;
+      width: fit-content;
+
+      > button {
+        margin-right: 0px;
+        margin-bottom: 16px;
+
+        &:nth-last-child(1) {
+          margin-bottom: 0px;
+        }
+      }
+
+      ${type === 'tabbed' &&
+      css`
+        > button {
+          margin: 0px;
+          margin-bottom: 2px;
+        }
+      `}
     `}
   `
 
@@ -113,5 +147,6 @@ export default Tabs
 
 Tabs.defaultProps = {
   tabs: [],
-  type: 'space'
+  type: 'space',
+  orientation: 'horizontal'
 }
