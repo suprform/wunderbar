@@ -27,7 +27,6 @@ const ToggleItem = ({
   style,
   ref,
   onChange,
-  onFocus,
   separator,
   error
 }: ToggleProps & ChoiceListPropTypes) => {
@@ -116,7 +115,6 @@ const ToggleItem = ({
 
   return (
     <div
-      aria-role='switch'
       css={styles}
       className={className}
       id={id}

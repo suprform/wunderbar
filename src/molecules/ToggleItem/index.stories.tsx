@@ -26,7 +26,6 @@ const ExToggleItem = ({ ...args }: any) => {
         {...args}
         checked={false}
         disabled
-        onChange={(v: boolean) => setValueChecked(v)}
         style={{ width: '600px' }}
       />
     </>

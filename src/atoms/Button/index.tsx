@@ -366,6 +366,8 @@ const Button = ({
       css={composedStyles}
       style={style}
       disabled={disabled || loading}
+      data-color={color}
+      data-variant={variant}
     >
       <Global />
       {PreIcon && (

@@ -43,7 +43,7 @@ export const heading = css`
   letter-spacing: -0.016em;
   font-weight: ${weight.bold};
   @media (max-width: 420px) {
-    font-size: 48px;
+    font-size: 32px;
     line-height: 62px;
     letter-spacing: -0.016em;
   }
@@ -55,7 +55,7 @@ export const subHeadingBig = css`
   letter-spacing: -0.01em;
   font-weight: ${weight.bold};
   @media (max-width: 420px) {
-    line-height: 45px;
+    line-height: 24px;
     letter-spacing: -0.0106667em;
   }
 `

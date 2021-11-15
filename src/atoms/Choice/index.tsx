@@ -261,6 +261,7 @@ export const Choice = React.forwardRef<ChoiceHandles, ChoiceProps>(
             onBlur={handleBlur}
             onClick={(e) => e.stopPropagation()}
             onChange={() => {}}
+            aria-checked={isChecked}
           />
         </span>
         {isCheckbox && (

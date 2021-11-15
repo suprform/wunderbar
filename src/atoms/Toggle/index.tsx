@@ -133,7 +133,14 @@ export const Toggle = React.forwardRef<ToggleHandles, ToggleProps>(
         className={className}
         id={id}
         style={style}
+        role='switch'
       >
+        <span style={{ display: 'none' }} aria-hidden='true'>
+          off
+        </span>
+        <span style={{ display: 'none' }} aria-hidden='true'>
+          on
+        </span>
         <Global />
         <span>{checked ? <Check /> : <Close />}</span>
       </button>
