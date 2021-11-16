@@ -4,9 +4,11 @@
 import Button, { ButtonProps } from '../../atoms/Button'
 import { css, jsx } from '@emotion/react'
 import baseColor from '../../styles/colors'
+import { common } from '../../styles/global'
 
 const ButtonGroup = ({ children }: { children: ButtonProps[] }) => {
   const style = css`
+    ${common}
     display: inline-flex;
     border-radius: 8px;
     :hover {

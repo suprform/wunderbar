@@ -6,6 +6,7 @@ import { css, jsx } from '@emotion/react'
 import Choice, { ChoiceProps } from '../../atoms/Choice'
 import { grey, red } from '../../styles/colors'
 import { subHeading } from '../../styles/font'
+import { common } from '../../styles/global'
 
 type ChoiceListPropTypes = {
   allowMultiple?: boolean
@@ -36,6 +37,7 @@ const ChoiceList = ({
 }: ChoiceListPropTypes) => {
   const type = allowMultiple ? 'checkbox' : 'radio'
   const styles = css`
+    ${common}
     margin: 0;
     padding: 0;
     border: none;

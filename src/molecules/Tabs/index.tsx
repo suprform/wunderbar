@@ -5,10 +5,11 @@ import React from 'react'
 import { css, jsx } from '@emotion/react'
 import { Button } from '../..'
 import { grey, red } from '../../styles/colors'
+import { common } from '../../styles/global'
 
 type tabsProps = {
   tabs: TabProps[]
-  type: 'space' | 'tabbed'
+  type: 'space' | 'tabbed' | 'line'
   orientation?: 'horizontal' | 'vertical'
   style?: React.CSSProperties
   id?: string
@@ -35,6 +36,7 @@ const Tabs = ({
   onChange
 }: tabsProps) => {
   const styles = css`
+    ${common}
     display: flex;
     padding: 8px;
     border-radius: 16px;
@@ -49,7 +51,8 @@ const Tabs = ({
       flex: 1;
 
       :hover,
-      :active {
+      :active,
+      :focus {
         background: ${grey[400]};
         box-shadow: none;
       }
@@ -101,6 +104,45 @@ const Tabs = ({
       }
     `}
 
+    ${type === 'line' &&
+    css`
+      background: ${grey[100]};
+      border-bottom: 1px solid ${grey[400]};
+      border-radius: 0px;
+      padding: 0px;
+
+      > button {
+        margin-right: 0px;
+        background: ${grey[100]};
+        border-radius: 0px;
+        border-bottom: 2px solid transparent;
+
+        &[disabled] {
+          color: ${grey[500]};
+        }
+
+        :hover,
+        :active {
+          background: ${grey[200]};
+        }
+
+        &[data-color='error'] {
+          background: ${grey[100]};
+          color: ${red[600]};
+        }
+
+        &[data-color='primary'] {
+          background: ${grey[300]};
+          color: ${grey[900]};
+          border-bottom: 2px solid ${grey[800]};
+
+          span svg * {
+            fill: ${grey[800]};
+          }
+        }
+      }
+    `}
+
     ${orientation === 'vertical' &&
     css`
       flex-flow: column;
@@ -120,6 +162,22 @@ const Tabs = ({
         > button {
           margin: 0px;
           margin-bottom: 2px;
+        }
+      `}
+
+      ${type === 'line' &&
+      css`
+        border-bottom: 0px;
+        border-right: 1px solid ${grey[400]};
+        > button {
+          margin: 0px;
+          border-bottom: 0px;
+          border-right: 2px solid transparent;
+
+          &[data-color='primary'] {
+            border-right: 2px solid ${grey[800]};
+            border-bottom: 0px;
+          }
         }
       `}
     `}

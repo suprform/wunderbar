@@ -3,7 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { css, jsx, keyframes } from '@emotion/react'
-import Global from '../../styles/global'
+import Global, { common } from '../../styles/global'
 import baseColor, { grey, green, red, blue, yellow } from '../../styles/colors'
 import { weight } from '../../styles/font'
 import elevation from '../../styles/elevations'
@@ -325,6 +325,7 @@ const Button = ({
         `
 
   const composedStyles = css`
+    ${common}
     ${base};
     ${colorStlyes};
     ${variationStyles};

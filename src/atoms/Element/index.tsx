@@ -5,6 +5,7 @@ import React from 'react'
 // eslint-disable-next-line no-unused-vars
 import { SerializedStyles, jsx } from '@emotion/react'
 import styled from '@emotion/styled'
+import { common } from '../../styles/global'
 
 export type ElementProps = {
   as: string
@@ -23,6 +24,7 @@ export type ElementProps = {
 
 const Element = (props: any) => {
   const Elm = styled[props.as]`
+    ${common}
     box-sizing: border-box;
   `
 

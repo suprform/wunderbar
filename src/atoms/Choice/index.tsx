@@ -3,7 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { css, jsx } from '@emotion/react'
-import Global from '../../styles/global'
+import Global, { common } from '../../styles/global'
 import { grey, red } from '../../styles/colors'
 import body, { bodyBig } from '../../styles/font'
 import Check from '../Icons/check'
@@ -91,6 +91,7 @@ export const Choice = React.forwardRef<ChoiceHandles, ChoiceProps>(
     React.useImperativeHandle(ref, () => eves)
 
     const styles = css`
+      ${common}
       display: flex;
       padding: 10px 6px;
       cursor: pointer;
@@ -167,6 +168,7 @@ export const Choice = React.forwardRef<ChoiceHandles, ChoiceProps>(
     `
 
     const labelStyles = css`
+      ${common}
       display: flex;
       flex-flow: column;
       margin-left: 14px;
@@ -191,6 +193,7 @@ export const Choice = React.forwardRef<ChoiceHandles, ChoiceProps>(
     `
 
     const radioStyles = css`
+      ${common}
       position: relative;
       border-radius: 6px;
       background: ${grey[100]};

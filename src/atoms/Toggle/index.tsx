@@ -3,7 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { css, jsx } from '@emotion/react'
-import Global from '../../styles/global'
+import Global, { common } from '../../styles/global'
 import { grey } from '../../styles/colors'
 import Check from '../Icons/check'
 import Close from '../Icons/close'
@@ -55,6 +55,7 @@ export const Toggle = React.forwardRef<ToggleHandles, ToggleProps>(
     React.useImperativeHandle(ref, () => eves)
 
     const styles = css`
+      ${common}
       width: 52px;
       height: 30px;
       background-color: ${grey[400]};

@@ -50,7 +50,7 @@ export default {
       name: 'type',
       defaultValue: 'space',
       default: 'space',
-      options: ['space', 'tabbed'],
+      options: ['space', 'tabbed', 'line'],
       control: { type: 'radio' }
     },
     orientation: {
@@ -91,7 +91,7 @@ export default {
       control: { type: 'object' }
     },
     tabs: {
-      name: 'style',
+      name: 'tabs',
       defaultValue: demoTabs,
       default: demoTabs,
       control: { type: 'object' }
