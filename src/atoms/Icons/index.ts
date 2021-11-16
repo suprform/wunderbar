@@ -5,6 +5,8 @@ import Check from './check'
 import Minus from './minus'
 import CloseIcon from './close'
 import SettingsIcon from './settings'
+import LightningIcon from './lightning'
+import ChevronRightIcon from './chevronRight'
 
 export default {
   Loading,
@@ -13,5 +15,7 @@ export default {
   Check,
   Minus,
   CloseIcon,
-  SettingsIcon
+  SettingsIcon,
+  LightningIcon,
+  ChevronRightIcon
 }

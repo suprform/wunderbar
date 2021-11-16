@@ -135,7 +135,7 @@ export default {
     },
     onChange: {
       name: 'onChange',
-      action: 'clicked'
+      action: 'changed'
     },
     onFocus: {
       name: 'onFocus',
@@ -156,6 +156,5 @@ ToggleItem.args = {
   label: 'Want to go to the Autobahn?',
   helpText: `Trust me it's fun!`,
   checked: false,
-  Icon: SettingsIcon,
-  onChange: () => {}
+  Icon: SettingsIcon
 }

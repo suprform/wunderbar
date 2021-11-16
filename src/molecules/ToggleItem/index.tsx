@@ -6,6 +6,7 @@ import { css, jsx } from '@emotion/react'
 import Toggle, { ToggleProps } from '../../atoms/Toggle'
 import { grey, red } from '../../styles/colors'
 import { bodyBig } from '../../styles/font'
+import GlobalStyles, { common } from '../../styles/global'
 
 type ChoiceListPropTypes = {
   label: string
@@ -31,6 +32,7 @@ const ToggleItem = ({
   error
 }: ToggleProps & ChoiceListPropTypes) => {
   const styles = css`
+    ${common}
     display: flex;
     padding: 20px;
     justify-content: space-between;
@@ -121,6 +123,7 @@ const ToggleItem = ({
       style={style}
       onClick={() => onChange && onChange(!checked, name)}
     >
+      {GlobalStyles}
       <div>
         <b>
           {Icon && <Icon />}

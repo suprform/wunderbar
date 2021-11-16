@@ -1,12 +1,12 @@
 import React from 'react'
 import TabsComp from '.'
-import SettingsIcon from '../../atoms/Icons/settings'
+import LightningIcon from '../../atoms/Icons/lightning'
 
 const demoTabs = [
-  { name: 'Tab1', value: 'tab1', selected: true, icon: SettingsIcon },
+  { name: 'Tab1', value: 'tab1', selected: true, icon: LightningIcon },
   { name: 'Tab2', value: 'tab2', selected: false, disabled: true },
   { name: 'Tab3', value: 'tab3', selected: false, error: true },
-  { name: 'Tab4', value: 'tab4', selected: false, icon: SettingsIcon },
+  { name: 'Tab4', value: 'tab4', selected: false, icon: LightningIcon },
   { name: 'Tab5', value: 'tab5', selected: false },
   { name: 'Tab6', value: 'tab6', selected: false }
 ]
@@ -108,6 +108,5 @@ const Template: any = (args: any) => <ExTabs {...args} />
 export const Tabs = Template.bind({})
 
 Tabs.args = {
-  tabs: demoTabs,
-  onChange: () => {}
+  tabs: demoTabs
 }

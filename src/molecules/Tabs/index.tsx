@@ -5,7 +5,7 @@ import React from 'react'
 import { css, jsx } from '@emotion/react'
 import { Button } from '../..'
 import { grey, red } from '../../styles/colors'
-import { common } from '../../styles/global'
+import Global, { common } from '../../styles/global'
 
 type tabsProps = {
   tabs: TabProps[]
@@ -185,6 +185,7 @@ const Tabs = ({
 
   return (
     <nav css={styles} id={id} className={className} style={style}>
+      <Global />
       {tabs.map((t, i) => (
         <Button
           color={t.selected ? 'primary' : t.error ? 'error' : 'white'}
