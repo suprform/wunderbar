@@ -8,6 +8,8 @@ import baseColor, { grey, green, red, blue, yellow } from '../../styles/colors'
 import { weight } from '../../styles/font'
 import elevation from '../../styles/elevations'
 import LoadingIcon from '../Icons/loading'
+// eslint-disable-next-line no-unused-vars
+import { commonProps } from '../../utils/commonProps'
 
 export type ButtonProps = {
   color?:
@@ -24,16 +26,13 @@ export type ButtonProps = {
   loading?: boolean
   rounded?: boolean
   onClick?: (event: React.MouseEvent<HTMLElement>) => void
-  children?: React.ReactNode
   PreIcon?: React.FunctionComponent<any>
   PostIcon?: React.FunctionComponent<any>
   style?: React.CSSProperties
   width?: number
   height?: number
-  id?: string
   label?: string
   type?: 'button' | 'submit' | 'reset'
-  className?: string
   href?: string
   ref?: React.LegacyRef<HTMLButtonElement>
 }
@@ -58,7 +57,7 @@ const Button = ({
   PostIcon,
   rounded,
   size
-}: ButtonProps) => {
+}: ButtonProps & commonProps) => {
   const renderChildren = () => {
     if (label) return label
     return children

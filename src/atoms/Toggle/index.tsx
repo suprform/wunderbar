@@ -8,15 +8,14 @@ import { grey } from '../../styles/colors'
 import Check from '../Icons/check'
 import Close from '../Icons/close'
 import elevations from '../../styles/elevations'
+// eslint-disable-next-line no-unused-vars
+import { commonProps } from '../../utils/commonProps'
 
 export type ToggleProps = {
-  className?: string
-  id?: string
   checked: Boolean
   name?: string
   error?: boolean
   disabled?: boolean
-  style?: React.CSSProperties
   ref?: React.Ref<HTMLButtonElement> | undefined
   trueIcon?: React.ReactElement<any, any>
   falseIcon?: React.ReactElement<any, any>
@@ -29,7 +28,10 @@ interface ToggleHandles {
   focus(): void
 }
 
-export const Toggle = React.forwardRef<ToggleHandles, ToggleProps>(
+export const Toggle = React.forwardRef<
+  ToggleHandles,
+  ToggleProps & commonProps
+>(
   ({
     id,
     className,
@@ -40,7 +42,7 @@ export const Toggle = React.forwardRef<ToggleHandles, ToggleProps>(
     ref,
     onChange,
     onFocus
-  }: ToggleProps) => {
+  }: ToggleProps & commonProps) => {
     const inputNode = React.useRef<HTMLButtonElement>(null)
     const onClick = () => onChange && onChange(!checked, name)
 

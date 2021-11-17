@@ -7,6 +7,8 @@ import Toggle, { ToggleProps } from '../../atoms/Toggle'
 import { grey, red } from '../../styles/colors'
 import { bodyBig } from '../../styles/font'
 import GlobalStyles, { common } from '../../styles/global'
+// eslint-disable-next-line no-unused-vars
+import { commonProps } from '../../utils/commonProps'
 
 type ChoiceListPropTypes = {
   label: string
@@ -30,7 +32,7 @@ const ToggleItem = ({
   onChange,
   separator,
   error
-}: ToggleProps & ChoiceListPropTypes) => {
+}: ToggleProps & ChoiceListPropTypes & commonProps) => {
   const styles = css`
     ${common}
     display: flex;

@@ -1,6 +1,7 @@
 import React from 'react'
 import ToggleItemComp from '.'
 import SettingsIcon from '../../atoms/Icons/settings'
+import { commonPropsStoryArgs } from '../../utils/commonProps'
 
 const ExToggleItem = ({ ...args }: any) => {
   const [checked, setValueChecked] = React.useState(false)
@@ -74,30 +75,6 @@ export default {
       default: {},
       control: { type: 'object' }
     },
-    id: {
-      name: 'id',
-      defaultValue: 'sampleID',
-      default: 'sampleID',
-      control: {
-        type: 'text'
-      }
-    },
-    className: {
-      name: 'className',
-      defaultValue: 'className',
-      default: 'className',
-      control: {
-        type: 'text'
-      }
-    },
-    name: {
-      name: 'name',
-      defaultValue: 'Wunderbar!',
-      default: 'name',
-      control: {
-        type: 'text'
-      }
-    },
     checked: {
       name: 'checked',
       type: { required: true },
@@ -114,12 +91,6 @@ export default {
       control: {
         type: 'boolean'
       }
-    },
-    style: {
-      name: 'style',
-      defaultValue: {},
-      default: {},
-      control: { type: 'object' }
     },
     trueIcon: {
       name: 'trueIcon',
@@ -144,7 +115,8 @@ export default {
     onBlur: {
       name: 'onBlur',
       action: 'blurred'
-    }
+    },
+    ...commonPropsStoryArgs
   }
 } as any
 

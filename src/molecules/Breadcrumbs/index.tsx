@@ -8,12 +8,11 @@ import Global, { common } from '../../styles/global'
 import ChevronRightIcon from '../../atoms/Icons/chevronRight'
 import MenuIcon from '../../atoms/Icons/menu'
 import body, { weight } from '../../styles/font'
+// eslint-disable-next-line no-unused-vars
+import { commonProps } from '../../utils/commonProps'
 
 type breadcrumbsProps = {
   breadcrumbs: breadcrumbProps[]
-  id?: string
-  className?: string
-  style?: React.CSSProperties
   shorten?: number
   onChange?: (name: string, value?: string) => {}
 }
@@ -34,7 +33,7 @@ const Breadcrumbs = ({
   style,
   shorten,
   onChange
-}: breadcrumbsProps) => {
+}: breadcrumbsProps & commonProps) => {
   const styles = css`
     ${common}
     display: flex;

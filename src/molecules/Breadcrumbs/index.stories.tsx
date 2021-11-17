@@ -1,6 +1,7 @@
 import React from 'react'
 import BreadcrumbsComp from '.'
 import LightningIcon from '../../atoms/Icons/lightning'
+import { commonPropsStoryArgs } from '../../utils/commonProps'
 
 const demoBreadcrumbs = [
   { name: 'Home', value: 'home', icon: LightningIcon },
@@ -19,28 +20,6 @@ export default {
   component: Exbreadcrumbs,
   title: 'Molecules/Breadcrumbs',
   argTypes: {
-    id: {
-      name: 'id',
-      defaultValue: 'sampleID',
-      default: 'sampleID',
-      control: {
-        type: 'text'
-      }
-    },
-    className: {
-      name: 'className',
-      defaultValue: 'className',
-      default: 'className',
-      control: {
-        type: 'text'
-      }
-    },
-    style: {
-      name: 'style',
-      defaultValue: {},
-      default: {},
-      control: { type: 'object' }
-    },
     shorten: {
       name: 'shorten',
       defaultValue: 8,
@@ -55,7 +34,8 @@ export default {
     },
     onChange: {
       action: 'changed'
-    }
+    },
+    ...commonPropsStoryArgs
   }
 } as any
 

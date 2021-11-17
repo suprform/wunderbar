@@ -1,6 +1,7 @@
 import React from 'react'
 import TabsComp from '.'
 import LightningIcon from '../../atoms/Icons/lightning'
+import { commonPropsStoryArgs } from '../../utils/commonProps'
 
 const demoTabs = [
   { name: 'Tab1', value: 'tab1', selected: true, icon: LightningIcon },
@@ -60,36 +61,6 @@ export default {
       options: ['horizontal', 'vertical'],
       control: { type: 'radio' }
     },
-    id: {
-      name: 'id',
-      defaultValue: 'sampleID',
-      default: 'sampleID',
-      control: {
-        type: 'text'
-      }
-    },
-    className: {
-      name: 'className',
-      defaultValue: 'className',
-      default: 'className',
-      control: {
-        type: 'text'
-      }
-    },
-    name: {
-      name: 'name',
-      defaultValue: 'Wunderbar!',
-      default: 'name',
-      control: {
-        type: 'text'
-      }
-    },
-    style: {
-      name: 'style',
-      defaultValue: {},
-      default: {},
-      control: { type: 'object' }
-    },
     tabs: {
       name: 'tabs',
       defaultValue: demoTabs,
@@ -99,7 +70,8 @@ export default {
     onChange: {
       name: 'onChange',
       action: 'selected'
-    }
+    },
+    ...commonPropsStoryArgs
   }
 } as any
 

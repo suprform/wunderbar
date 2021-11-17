@@ -6,14 +6,13 @@ import { css, jsx } from '@emotion/react'
 import { Button } from '../..'
 import { grey, red } from '../../styles/colors'
 import Global, { common } from '../../styles/global'
+// eslint-disable-next-line no-unused-vars
+import { commonProps } from '../../utils/commonProps'
 
 type tabsProps = {
   tabs: TabProps[]
   type: 'space' | 'tabbed' | 'line'
   orientation?: 'horizontal' | 'vertical'
-  style?: React.CSSProperties
-  id?: string
-  className?: string
   onChange?: (value: string, name: string) => {}
 }
 
@@ -34,7 +33,7 @@ const Tabs = ({
   id,
   style,
   onChange
-}: tabsProps) => {
+}: tabsProps & commonProps) => {
   const styles = css`
     ${common}
     display: flex;

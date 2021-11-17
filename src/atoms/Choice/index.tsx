@@ -8,10 +8,10 @@ import { grey, red } from '../../styles/colors'
 import body, { bodyBig } from '../../styles/font'
 import Check from '../Icons/check'
 import Minus from '../Icons/minus'
+// eslint-disable-next-line no-unused-vars
+import { commonProps } from '../../utils/commonProps'
 
 export type ChoiceProps = {
-  className?: string
-  id?: string
   label: string
   value: string
   checked?: Boolean
@@ -21,8 +21,7 @@ export type ChoiceProps = {
   disabled?: boolean
   labelHidden?: boolean
   isIntermediate?: boolean
-  style?: React.CSSProperties
-  ref?: React.Ref<HTMLButtonElement> | undefined
+  ref?: React.Ref<HTMLButtonElement>
   type: 'checkbox' | 'radio'
   onChange?(checked: boolean, label: string, name?: string): void
   onFocus?(): void
@@ -52,7 +51,7 @@ export const Choice = React.forwardRef<ChoiceHandles, ChoiceProps>(
     onFocus,
     isIntermediate,
     type
-  }: ChoiceProps) => {
+  }: commonProps & ChoiceProps) => {
     const inputNode = React.useRef<HTMLInputElement>(null)
     const isChecked = !isIntermediate && Boolean(checked)
     const isCheckbox = type === 'checkbox'
@@ -291,7 +290,6 @@ Choice.defaultProps = {
   onBlur: () => {},
   onFocus: () => {},
   labelHidden: false,
-  id: new Date().toISOString(),
   checked: true,
   value: 'true',
   type: 'checkbox'

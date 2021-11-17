@@ -1,5 +1,6 @@
 import React from 'react'
 import Choice from '.'
+import { commonPropsStoryArgs } from '../../utils/commonProps'
 
 const ExChoice = ({ ...args }: any) => {
   const [checked, setValueChecked] = React.useState(false)
@@ -35,15 +36,6 @@ export default {
   component: ExChoice,
   title: 'Atoms/Choice',
   argTypes: {
-    id: {
-      name: 'id',
-      type: { name: 'string', required: true },
-      defaultValue: 'sampleID',
-      default: 'sampleID',
-      control: {
-        type: 'text'
-      }
-    },
     type: {
       name: 'type',
       type: { name: 'string', required: true },
@@ -51,15 +43,6 @@ export default {
       default: 'checkbox',
       options: ['checkbox', 'radio'],
       control: { type: 'radio' }
-    },
-    className: {
-      name: 'className',
-      type: { name: 'string', required: false },
-      defaultValue: 'className',
-      default: 'className',
-      control: {
-        type: 'text'
-      }
     },
     label: {
       name: 'label',
@@ -75,15 +58,6 @@ export default {
       type: { name: 'string', required: true },
       defaultValue: 'Wunderbar!',
       default: 'value',
-      control: {
-        type: 'text'
-      }
-    },
-    name: {
-      name: 'name',
-      type: { name: 'string', required: false },
-      defaultValue: 'Wunderbar!',
-      default: 'name',
       control: {
         type: 'text'
       }
@@ -138,12 +112,6 @@ export default {
         type: 'boolean'
       }
     },
-    style: {
-      name: 'style',
-      defaultValue: {},
-      default: {},
-      control: { type: 'object' }
-    },
     onChange: {
       name: 'onChange',
       action: 'clicked'
@@ -155,7 +123,8 @@ export default {
     onBlur: {
       name: 'onBlur',
       action: 'blurred'
-    }
+    },
+    ...commonPropsStoryArgs
   }
 } as any
 

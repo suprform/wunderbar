@@ -1,5 +1,6 @@
 import React from 'react'
 import ChoiceList from '.'
+import { commonPropsStoryArgs } from '../../utils/commonProps'
 
 const ExChoiceList = ({ ...args }: any) => {
   const [selected, setSelected] = React.useState(['Brezel'])
@@ -38,15 +39,6 @@ export default {
   component: ExChoiceList,
   title: 'Molecules/ChoiceList',
   argTypes: {
-    title: {
-      name: 'title',
-      type: { name: 'string' },
-      defaultValue: 'Your favorite dish',
-      default: 'Your favorite dish',
-      control: {
-        type: 'text'
-      }
-    },
     choices: {
       name: 'choices',
       defaultValue: [
@@ -70,33 +62,6 @@ export default {
       default: [],
       control: {
         type: 'array'
-      }
-    },
-    className: {
-      name: 'className',
-      type: { name: 'string', required: false },
-      defaultValue: 'className',
-      default: 'className',
-      control: {
-        type: 'text'
-      }
-    },
-    id: {
-      name: 'id',
-      type: { name: 'string', required: false },
-      defaultValue: 'ID',
-      default: 'ID',
-      control: {
-        type: 'text'
-      }
-    },
-    name: {
-      name: 'name',
-      type: { name: 'string', required: false },
-      defaultValue: 'Wunderbar!',
-      default: 'name',
-      control: {
-        type: 'text'
       }
     },
     error: {
@@ -134,7 +99,8 @@ export default {
     onChange: {
       name: 'onChange',
       action: 'clicked'
-    }
+    },
+    ...commonPropsStoryArgs
   }
 } as any
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import ToggleComp from '.'
+import { commonPropsStoryArgs } from '../../utils/commonProps'
 
 const ExToggle = ({ ...args }: any) => {
   const [checked, setValueChecked] = React.useState(false)
@@ -34,30 +35,6 @@ export default {
   component: ExToggle,
   title: 'Atoms/Toggle',
   argTypes: {
-    id: {
-      name: 'id',
-      defaultValue: 'sampleID',
-      default: 'sampleID',
-      control: {
-        type: 'text'
-      }
-    },
-    className: {
-      name: 'className',
-      defaultValue: 'className',
-      default: 'className',
-      control: {
-        type: 'text'
-      }
-    },
-    name: {
-      name: 'name',
-      defaultValue: 'Wunderbar!',
-      default: 'name',
-      control: {
-        type: 'text'
-      }
-    },
     error: {
       name: 'error',
       default: false,
@@ -82,12 +59,6 @@ export default {
         type: 'boolean'
       }
     },
-    style: {
-      name: 'style',
-      defaultValue: {},
-      default: {},
-      control: { type: 'object' }
-    },
     trueIcon: {
       name: 'trueIcon',
       defaultValue: {},
@@ -111,7 +82,8 @@ export default {
     onBlur: {
       name: 'onBlur',
       action: 'blurred'
-    }
+    },
+    ...commonPropsStoryArgs
   }
 } as any
 

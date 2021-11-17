@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '.'
+import { commonPropsStoryArgs } from '../../utils/commonProps'
 
 export default {
   component: Button,
@@ -53,12 +54,6 @@ export default {
       default: false,
       control: { type: 'boolean' }
     },
-    style: {
-      name: 'style',
-      defaultValue: {},
-      default: {},
-      control: { type: 'object' }
-    },
     width: {
       name: 'width',
       defaultValue: undefined,
@@ -71,7 +66,8 @@ export default {
       default: undefined,
       control: { type: 'number' }
     },
-    onClick: { action: 'clicked' }
+    onClick: { action: 'clicked' },
+    ...commonPropsStoryArgs
   }
 } as any
 

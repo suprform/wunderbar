@@ -7,16 +7,14 @@ import Choice, { ChoiceProps } from '../../atoms/Choice'
 import { grey, red } from '../../styles/colors'
 import { subHeading } from '../../styles/font'
 import { common } from '../../styles/global'
+// eslint-disable-next-line no-unused-vars
+import { commonProps } from '../../utils/commonProps'
 
 type ChoiceListPropTypes = {
   allowMultiple?: boolean
   disabled?: boolean
   separator?: boolean
   error?: string
-  title?: string
-  name?: string
-  className?: string
-  id?: string
   choices: ChoiceProps[]
   selected: string[]
   onChange: (selected: string[], name?: string) => void
@@ -34,7 +32,7 @@ const ChoiceList = ({
   onChange,
   className,
   id
-}: ChoiceListPropTypes) => {
+}: ChoiceListPropTypes & commonProps) => {
   const type = allowMultiple ? 'checkbox' : 'radio'
   const styles = css`
     ${common}
@@ -84,7 +82,7 @@ const ChoiceList = ({
   }
 
   return (
-    <fieldset className={className} id={id} css={styles}>
+    <fieldset title={title} className={className} id={id} css={styles}>
       {title && <legend>{title}</legend>}
       <ul>
         {choices.map((choice, index) => (
