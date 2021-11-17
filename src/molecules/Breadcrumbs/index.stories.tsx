@@ -41,11 +41,17 @@ export default {
       default: {},
       control: { type: 'object' }
     },
+    shorten: {
+      name: 'shorten',
+      defaultValue: 8,
+      default: 8,
+      control: { type: 'number' }
+    },
     breadcrumbs: {
       name: 'breadcrumbs',
       defaultValue: demoBreadcrumbs,
       default: demoBreadcrumbs,
-      control: { type: 'object' }
+      type: { type: 'object', required: true }
     },
     onChange: {
       action: 'changed'

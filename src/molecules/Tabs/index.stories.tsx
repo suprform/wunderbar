@@ -94,7 +94,7 @@ export default {
       name: 'tabs',
       defaultValue: demoTabs,
       default: demoTabs,
-      control: { type: 'object' }
+      type: { type: 'object', required: true }
     },
     onChange: {
       name: 'onChange',

@@ -7,6 +7,7 @@ import CloseIcon from './close'
 import SettingsIcon from './settings'
 import LightningIcon from './lightning'
 import ChevronRightIcon from './chevronRight'
+import MenuIcon from './menu'
 
 export default {
   Loading,
@@ -17,5 +18,6 @@ export default {
   CloseIcon,
   SettingsIcon,
   LightningIcon,
-  ChevronRightIcon
+  ChevronRightIcon,
+  MenuIcon
 }

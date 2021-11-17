@@ -290,7 +290,7 @@ const Button = ({
 
   const loadingStyle = css`
     color: transparent;
-    cursor: not-allowed;
+    cursor: progress;
     :hover {
       box-shadow: none;
     }
