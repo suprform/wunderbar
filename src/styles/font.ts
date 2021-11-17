@@ -15,7 +15,7 @@ export const weight = {
 
 export const display = css`
   font-size: 96px;
-  line-height: 67px;
+  line-height: 110px;
   letter-spacing: -0.032em;
   font-weight: ${weight.bold};
   @media (max-width: 420px) {
@@ -101,6 +101,17 @@ export const caption = css`
   @media (max-width: 420px) {
     font-size: 12px;
     line-height: 18px;
+    letter-spacing: -0.004em;
+  }
+`
+
+export const helpText = css`
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: -0.04em;
+  @media (max-width: 420px) {
+    font-size: 10px;
+    line-height: 16px;
     letter-spacing: -0.004em;
   }
 `

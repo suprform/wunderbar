@@ -5,7 +5,7 @@ type commonProps = {
   title?: string
   role?: string
   style?: React.CSSProperties
-  children?: React.ReactNode
+  children?: React.ReactNode[] | React.ReactNode
 }
 
 const commonPropsStoryArgs = {

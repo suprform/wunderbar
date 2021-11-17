@@ -63,20 +63,6 @@ export const yellow = {
 
 // end of main colors
 
-// defalut colors collection
-
-export default {
-  primary: grey[900],
-  secondary: grey[700],
-  tertiary: grey[600],
-  white: grey[100],
-  disabled: grey[400],
-  success: green[600],
-  error: red[600],
-  warning: yellow[600],
-  info: blue[600]
-}
-
 // other colors
 
 export const darkGrey = {
@@ -137,4 +123,21 @@ export const purple = {
   700: '#5C264C',
   800: '#3D1A33',
   900: '#281122'
+}
+
+// defalut colors collection
+
+export default {
+  primary: grey[900],
+  secondary: grey[700],
+  tertiary: grey[600],
+  disabled: grey[400],
+  white: grey[100],
+  success: green[600],
+  error: red[600],
+  warning: yellow[600],
+  info: blue[600],
+  orange: orange[600],
+  purple: purple[600],
+  lightBlue: lightBlue[600]
 }
