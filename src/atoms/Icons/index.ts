@@ -7,6 +7,9 @@ import CloseIcon from './close'
 import SettingsIcon from './settings'
 import LightningIcon from './lightning'
 import ChevronRightIcon from './chevronRight'
+import ChevronLeftIcon from './chevronLeft'
+import ChevronTopIcon from './chevronTop'
+import ChevronBottomIcon from './chevronBottom'
 import MenuIcon from './menu'
 
 export default {
@@ -19,5 +22,8 @@ export default {
   SettingsIcon,
   LightningIcon,
   ChevronRightIcon,
+  ChevronLeftIcon,
+  ChevronTopIcon,
+  ChevronBottomIcon,
   MenuIcon
 }

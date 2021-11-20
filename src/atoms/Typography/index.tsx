@@ -111,8 +111,12 @@ const Typography = ({
       font-weight: ${fontWeight[weight]};
     `}
 
-    b > {
+    > b {
       font-weight: ${fontWeight.bold};
+      ${(weight === 'book' || weight === 'bold') &&
+      css`
+        font-weight: ${fontWeight.book};
+      `}
     }
   `
 

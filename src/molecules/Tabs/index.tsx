@@ -28,9 +28,9 @@ type TabProps = {
 const Tabs = ({
   tabs,
   type,
-  className,
   orientation,
   id,
+  className,
   style,
   onChange
 }: tabsProps & commonProps) => {
