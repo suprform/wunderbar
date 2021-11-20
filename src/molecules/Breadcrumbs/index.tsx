@@ -10,6 +10,7 @@ import MenuIcon from '../../atoms/Icons/menu'
 import body, { weight } from '../../styles/font'
 // eslint-disable-next-line no-unused-vars
 import { commonProps } from '../../utils/commonProps'
+import Typography from '../../atoms/Typography'
 
 type breadcrumbsProps = {
   breadcrumbs: breadcrumbProps[]
@@ -70,9 +71,10 @@ const Breadcrumbs = ({
         }
       }
 
-      > a {
+      a {
         margin-right: 12px;
         margin-left: 8px;
+        font-weight: ${weight.semiBold};
       }
 
       > svg:nth-last-child(1) * {
@@ -89,7 +91,7 @@ const Breadcrumbs = ({
           text-decoration: none;
         }
 
-        > a {
+        a {
           color: ${grey[800]};
         }
       }
@@ -130,7 +132,9 @@ const Breadcrumbs = ({
             disabled={b.disabled}
           >
             {b.icon && <b.icon />}
-            <a>{b.name}</a>
+            <Typography type='body'>
+              <a>{b.name}</a>
+            </Typography>
             {i < breadcrumbs.length - 1 && <ChevronRightIcon />}
           </button>
         ) : (

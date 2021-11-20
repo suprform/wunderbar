@@ -114,7 +114,7 @@ const Tabs = ({
         margin-right: 0px;
         background: ${grey[100]};
         border-radius: 0px;
-        border-bottom: 2px solid transparent;
+        box-shadow: inset 0px -3px 0px transparent;
 
         &[disabled] {
           color: ${grey[500]};
@@ -133,7 +133,7 @@ const Tabs = ({
         &[data-color='primary'] {
           background: ${grey[300]};
           color: ${grey[900]};
-          border-bottom: 2px solid ${grey[800]};
+          box-shadow: inset 0px -3px 0px ${grey[800]};
 
           span svg * {
             fill: ${grey[800]};
@@ -167,14 +167,14 @@ const Tabs = ({
       ${type === 'line' &&
       css`
         border-bottom: 0px;
-        border-right: 1px solid ${grey[400]};
         > button {
           margin: 0px;
           border-bottom: 0px;
           border-right: 2px solid transparent;
+          border-right: 1px solid ${grey[400]};
 
           &[data-color='primary'] {
-            border-right: 2px solid ${grey[800]};
+            box-shadow: inset -3px 0px 0px ${grey[800]};
             border-bottom: 0px;
           }
         }

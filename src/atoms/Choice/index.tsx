@@ -10,6 +10,7 @@ import Check from '../Icons/check'
 import Minus from '../Icons/minus'
 // eslint-disable-next-line no-unused-vars
 import { commonProps } from '../../utils/commonProps'
+import Typography from '../Typography'
 
 export type ChoiceProps = {
   label: string
@@ -178,7 +179,7 @@ export const Choice = React.forwardRef<ChoiceHandles, ChoiceProps>(
         display: none;
       `}
 
-      b {
+      p {
         ${bodyBig}
         color: ${!disabled ? grey[900] : grey[400]};
         line-height: 24px;
@@ -274,9 +275,13 @@ export const Choice = React.forwardRef<ChoiceHandles, ChoiceProps>(
         )}
         {isRadio && <span css={radioStyles}>{isChecked && <span />}</span>}
         <span css={labelStyles}>
-          <b>{label}</b>
-          {error && <span style={{ color: red[600] }}>{error}</span>}
-          {helpText && <span>{helpText}</span>}
+          <Typography type='body'>{label}</Typography>
+          {helpText && <Typography type='caption'>{helpText}</Typography>}
+          {error && (
+            <Typography type='caption' style={{ color: red[600] }}>
+              {error}
+            </Typography>
+          )}
         </span>
       </label>
     )

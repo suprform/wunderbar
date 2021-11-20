@@ -9,6 +9,7 @@ import { bodyBig } from '../../styles/font'
 import GlobalStyles, { common } from '../../styles/global'
 // eslint-disable-next-line no-unused-vars
 import { commonProps } from '../../utils/commonProps'
+import Typography from '../../atoms/Typography'
 
 type ChoiceListPropTypes = {
   label: string
@@ -76,10 +77,13 @@ const ToggleItem = ({
       }
 
       > span {
-        margin-top: 8px;
         width: 300px;
         color: ${grey[600]};
       }
+    }
+
+    > button {
+      min-width: 52px;
     }
 
     ${disabled &&
@@ -131,15 +135,16 @@ const ToggleItem = ({
           {Icon && <Icon />}
           <span>{label}</span>
         </b>
-        {helpText && <span>{helpText}</span>}
+        {helpText && <Typography type='caption'>{helpText}</Typography>}
         {error && (
-          <span
+          <Typography
+            type='body'
             css={css`
               color: ${red[600]} !important;
             `}
           >
             {error}
-          </span>
+          </Typography>
         )}
       </div>
       <Toggle

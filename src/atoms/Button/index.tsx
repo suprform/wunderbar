@@ -10,6 +10,7 @@ import elevation from '../../styles/elevations'
 import LoadingIcon from '../Icons/loading'
 // eslint-disable-next-line no-unused-vars
 import { commonProps } from '../../utils/commonProps'
+import Typography from '../Typography'
 
 export type ButtonProps = {
   color?:
@@ -380,7 +381,9 @@ const Button = ({
           <PreIcon />
         </span>
       )}
-      <span css={text}>{renderChildren()}</span>
+      <Typography type='body' css={text}>
+        {renderChildren()}
+      </Typography>
       {loading && (
         <span css={spinner}>
           <LoadingIcon />

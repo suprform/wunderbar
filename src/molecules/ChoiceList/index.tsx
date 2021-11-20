@@ -4,6 +4,7 @@
 import { css, jsx } from '@emotion/react'
 // eslint-disable-next-line no-unused-vars
 import Choice, { ChoiceProps } from '../../atoms/Choice'
+import Typography from '../../atoms/Typography'
 import { grey, red } from '../../styles/colors'
 import { subHeading } from '../../styles/font'
 import { common } from '../../styles/global'
@@ -83,7 +84,11 @@ const ChoiceList = ({
 
   return (
     <fieldset title={title} className={className} id={id} css={styles}>
-      {title && <legend>{title}</legend>}
+      {title && (
+        <Typography type='subHeading'>
+          <legend>{title}</legend>
+        </Typography>
+      )}
       <ul>
         {choices.map((choice, index) => (
           <li key={choice.label + index}>
