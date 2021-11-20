@@ -29,6 +29,8 @@ const Pagination = ({
 }: PaginationProps & commonProps) => {
   const styles = css`
     ${common}
+    display: flex;
+    justify-content: center;
 
     > ul {
       margin: 0px;
@@ -82,16 +84,16 @@ const Pagination = ({
     <section css={styles} id={id} className={className} style={style}>
       <Global />
       <ul>
-        <li>
-          <Button
-            color='white'
-            disabled={currentPage === 1}
-            onClick={() => pageChange(currentPage === 1 ? 1 : currentPage - 1)}
-            rounded
-          >
-            <ChevronLeft />
-          </Button>
-        </li>
+        {currentPage !== 1 && (
+          <li>
+            <Button
+              color='white'
+              onClick={() => pageChange(currentPage - 1)}
+              rounded
+              PreIcon={ChevronLeft}
+            />
+          </li>
+        )}
         {renderedPages.map((p, i) =>
           p > 0 ? (
             <li key={p + i + 'paginated-key'}>
@@ -118,18 +120,16 @@ const Pagination = ({
             </li>
           )
         )}
-        <li>
-          <Button
-            disabled={currentPage === pages}
-            color='white'
-            onClick={() =>
-              pageChange(currentPage === pages ? pages : currentPage + 1)
-            }
-            rounded
-          >
-            <ChevronRight />
-          </Button>
-        </li>
+        {currentPage !== pages && (
+          <li>
+            <Button
+              color='white'
+              onClick={() => pageChange(currentPage + 1)}
+              rounded
+              PreIcon={ChevronRight}
+            />
+          </li>
+        )}
       </ul>
     </section>
   )
