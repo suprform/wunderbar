@@ -3,7 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { css, jsx } from '@emotion/react'
-import { Button } from '../..'
+import { Button } from '../../'
 import { grey, red } from '../../styles/colors'
 import Global, { common } from '../../styles/global'
 // eslint-disable-next-line no-unused-vars

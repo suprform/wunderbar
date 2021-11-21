@@ -1,5 +1,5 @@
 import React from 'react'
-import Choice from '.'
+import ChoiceComp from '.'
 import { commonPropsStoryArgs } from '../../utils/commonProps'
 
 const ExChoice = ({ ...args }: any) => {
@@ -11,7 +11,7 @@ const ExChoice = ({ ...args }: any) => {
 
   return (
     <>
-      <Choice
+      <ChoiceComp
         value='checkBox101'
         {...args}
         checked={checked}
@@ -20,7 +20,7 @@ const ExChoice = ({ ...args }: any) => {
           args.onChange(v, l, n)
         }}
       />
-      <Choice
+      <ChoiceComp
         value='checkBox102'
         {...args}
         checked
@@ -130,9 +130,9 @@ export default {
 
 const Template: any = (args: any) => <ExChoice {...args} />
 
-export const choice = Template.bind({})
+export const Choice = Template.bind({})
 
-choice.args = {
+Choice.args = {
   label: 'Wunderbar!',
   helpText: 'Blutwurst is the best',
   checked: true,
